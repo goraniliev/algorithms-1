@@ -53,9 +53,9 @@ class Graph:
     def get_edges(self):
         edges = list()
         for node, neighbors in self.adj.items():
-            for neighbor in neighbors:
+            for neighbor, weight in neighbors.items():
                 if node < neighbor:
-                    edges.append((node, neighbor))
+                    edges.append((node, neighbor, weight))
         return edges
 
 
